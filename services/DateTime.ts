@@ -1,5 +1,6 @@
 import GLib from "gi://GLib"
 import { createPoll } from "ags/time"
+import { Accessor } from "gnim"
 
 function getOrdinalSuffix(day: number): string {
     switch (day) {
@@ -13,13 +14,13 @@ function getOrdinalSuffix(day: number): string {
 export function getDateWithSuffix(): string {
     const now = GLib.DateTime.new_now_local()
     const date = now.format("%e");
-    const suffix = getOrdinalSuffix(date);
-    return `${date.trim()}${suffix}`
+    const suffix = getOrdinalSuffix(Number(date));
+    return `${date?.trim()}${suffix}` || '1st'
 }
 
 export function getFormattedDateTime(format: string = "%X"): string {
     const now = GLib.DateTime.new_now_local()
-    return now.format(format)
+    return now.format(format) || '00:00:00'
 }
 
 export function formattedClock(format: string = "%X"): Accessor<string> {
