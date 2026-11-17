@@ -12,6 +12,7 @@ export default function ScreenRecordPanel() {
             >
                 <button
                     onClicked={takeScreenshot}
+                    iconName="camera-photo-symbolic"
                 />
             </box>
         </box>

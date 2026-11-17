@@ -1,16 +1,10 @@
 import app from "ags/gtk4/app"
-import { Astal, Gtk, Gdk } from "ags/gtk4"
+import { Astal, Gdk } from "ags/gtk4"
 import { createState } from "ags"
-import BarModuleNetwork from "./../modules/Network"
-import BarModuleTray from "./../modules/Tray"
-import BarModuleClock from "./../modules/Clock"
-import BarModuleBattery from "./../modules/Battery"
-import BarModulePower from "./../modules/Power"
-import BarModuleTuner from "./../modules/Tuner"
-import BarModuleRotationLock from "./../modules/RotationLock"
+import MenuBar from "../panels/MenuBar"
 
 
-export default function StatusBar(gdkmonitor: Gdk.Monitor) {
+export default function Panels(gdkmonitor: Gdk.Monitor) {
     const { TOP, BOTTOM, LEFT, RIGHT } = Astal.WindowAnchor
     const [customCSS, setCustomCSS] = createState(`* { background: #00000085; }`)
 
@@ -28,8 +22,8 @@ export default function StatusBar(gdkmonitor: Gdk.Monitor) {
     return (
         <window
             visible
-            name="StatusBar"
-            class="StatusBar"
+            name="Panels"
+            class="Panels"
             anchor={TOP | LEFT | RIGHT}
             gdkmonitor={gdkmonitor}
             exclusivity={Astal.Exclusivity.EXCLUSIVE}
@@ -38,26 +32,7 @@ export default function StatusBar(gdkmonitor: Gdk.Monitor) {
             application={app}
             css={customCSS}
         >
-            <centerbox orientation={Gtk.Orientation.HORIZONTAL} >
-                <box $type="start" spacing={5} >
-                    <BarModuleNetwork />
-                    <BarModuleTuner />
-                </box>
-                <box
-                    class="spacer"
-                    $type="center"
-                    spacing={5}
-                    hexpand
-                >
-                </box>
-                <box $type="end" spacing={5} >
-                    <BarModuleClock />
-                    <BarModuleTray />
-                    <BarModuleRotationLock />
-                    <BarModuleBattery />
-                    <BarModulePower />
-                </box>
-            </centerbox>
+            <MenuBar />
         </window>
     )
 }
