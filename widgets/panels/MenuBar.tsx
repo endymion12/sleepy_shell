@@ -7,6 +7,7 @@ import { formattedClock } from "./../../services/DateTime"
 import RotationLock from "../controls/RotationLock"
 import PowerButton from "../applets/PowerButton"
 import ScreenshotButton from "../controls/ScreenshotButton"
+import ScreenRecordButton from "../controls/ScreenRecordButton"
 
 export default function MenuBar() {
     return (
@@ -31,6 +32,7 @@ export default function MenuBar() {
                 <TunerApplet />
                 <SystemTray />
                 <ScreenshotButton />
+                <ScreenRecordButton />
                 <RotationLock />
                 <PowerButton />
             </box>
