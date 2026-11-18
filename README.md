@@ -1,4 +1,4 @@
-### Sleepy Shell
+# Sleepy Shell
 Sleepy Shell: An Android-inspired touch-friendly shell designed for maximum focus. Made with AGS v3 / Astal
 
 **This is my personal setup designed for my own usecase only. There is no settings or config file, and many standard shell features are missing. Sections of the code may not be portable beyond the specifics of my own devices and software. Use at own risk.**
@@ -42,7 +42,7 @@ I also wanted to optimise the experience for my 2-in-1 14" laptop. One of the is
         * Restart
      
 ## Installation
-# Dependencies
+### Dependencies
 * AGS v3
 * Astal
     * AstalApps
@@ -54,15 +54,15 @@ I also wanted to optimise the experience for my 2-in-1 14" laptop. One of the is
 * arecord and aubio-pitch for the tuner
 * grim and wf-recorder for screenshots and screen recording respectively
 
-# Steps to install
+### Steps to install
 * Clone the repository to `$HOME/.config/ags`
 * Run with `ags run`
 
-# External programs that will need to be removed from code to use without:
+### External programs that will need to be removed from code to use without:
 * app drawer currently launches apps using UWSM (easy enough to change to use `AstalApps.App.launch()` )
 * Lock command in power menu launches `nwg-hello`
 
-# Other modifications
+### Other modifications
 * I use lisgd to launch my navbar
 * My `status_colour_listener.sh` script listens to sway IPC to change the colour of the top bar as the focus moves
 
