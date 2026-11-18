@@ -11,6 +11,11 @@ The widgets adapt to the active GTK theme - screenshots are taken with Materia D
 <img width="1920" height="1200" alt="20261118_22h31m48s_grim" src="https://github.com/user-attachments/assets/bdd0c638-5cec-4c61-84de-d3d7406d628c" />
 <img width="1920" height="1200" alt="20261118_22h35m33s_grim" src="https://github.com/user-attachments/assets/8a942e1e-357a-4c47-b6d8-b5bc4f2ab6c3" />
 
+## Design Principles
+I created this shell because I wanted something that would prompt me to choose one task and focus on that, rather than making it easy to switch tasks frequently. I took inspiration from the Android UI because I rarely find myself multitasking on my Android phone. Hence the desktop with the app drawer, and no overlaid app runner. 
+
+I also wanted to optimise the experience for my 2-in-1 14" laptop. One of the issues I had with desktop environments is the insistence that I must have a dock or taskbar (except Gnome but I dislike that for other reasons). I found that, since I didn't want to be switching tasks often, they just took up valuable screen real estate. Again, I looked to phones with their narrow status bar at the top of the screen, and have decided to implement that as a top bar, with other controls appearing as popups as needed. Furthermore, everything should be touch-friendly. Hence, the app drawer has both a search function, which I almost exclusively use when using the keyboard, and large icons, for use in tablet mode. Additionally, I have an Android-inspired navigation bar which I have configured lisgd to reveal on swipe up. 
+
 ## Components
 * Clock desktop widget
 * App drawer
